@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: discovery
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 30
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    region: eu-west-2
+  server:
+    renewal-percent-threshold: 85
+    enable-self-preservation: false

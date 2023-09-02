@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: websocket-bad
+          uri: ws://localhost:80
+          predicates:
+            - Path=/websocket-good/**
+
+        - id: websocket-good
+          uri: lb:ws://websocket
+          predicates:
+            - Path=/websocket-bad/**
+server:
+  port: 8080
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    region: eu-west-2
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

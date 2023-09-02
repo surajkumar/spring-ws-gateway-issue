@@ -1,0 +1,13 @@
+subprojects {
+    apply plugin: 'java'
+    group = 'surajkumar'
+    version = '0.0.0'
+    repositories {
+        mavenCentral()
+    }
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+}

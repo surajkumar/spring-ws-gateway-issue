@@ -1,0 +1,5 @@
+rootProject.name = 'spring-ws-gateway-issue'
+include 'api-gateway'
+include 'discovery'
+include 'websocket'
+
