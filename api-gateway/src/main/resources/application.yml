@@ -4,12 +4,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: websocket-bad
+        - id: websocket-good
           uri: ws://localhost:80
           predicates:
             - Path=/websocket-good/**
 
-        - id: websocket-good
+        - id: websocket-bad
           uri: lb:ws://websocket
           predicates:
             - Path=/websocket-bad/**
